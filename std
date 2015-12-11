@@ -1,0 +1,7 @@
+#!/bin/bash
+
+read d 
+read b
+c= expr $d + $b
+echo $c
+
