@@ -8,8 +8,21 @@
 
 #include <stdio.h>
 
+void sayHello() {
+	printf("Hello C\n");
+}
+
+typedef void(*Func)();
+
+
 int main(int argc, const char * argv[]) {
     // insert code here...
-    printf("Hello, World!\n");
+	
+	void (*p)();
+
+	Func f = sayHello;
+	f();
+	printf("Hello %d\n", 1233);
+
     return 0;
 }

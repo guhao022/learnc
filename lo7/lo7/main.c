@@ -7,6 +7,7 @@
 //
 
 #include <stdio.h>
+#include <stdlib.h>
 
 //结构体
 struct People {
@@ -17,14 +18,15 @@ struct People {
 int main(int argc, const char * argv[]) {
     // insert code here...
     
-    struct People p;
-    p.age = 10;
-    p.name = "xiaoli";
+    struct People * p = malloc(sizeof(struct People));
+    p->age = 10;
+    p->name = "xiaoli";
     
-    printf("Hello, World!%s\n", p.name);
+    printf("Hello, World!%s\n", p->name);
     
-    struct People p1 = p;
-    p1.age = 90;
-    printf("%s==>%d\n", p1.name,p1.age);
+    struct People * p1 = p;
+    p->age = 90;
+    printf("%s==>%d\n", p1->name,p1->age);
+	free(p);
     return 0;
 }
